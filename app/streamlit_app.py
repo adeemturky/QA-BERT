@@ -2,7 +2,7 @@ import streamlit as st
 import tensorflow as tf
 from transformers import TFDistilBertForQuestionAnswering, DistilBertTokenizerFast
 
-# Load model and tokenizer
+# Load model and tokenizer from Hugging Face
 @st.cache_resource
 def load_model():
     model = TFDistilBertForQuestionAnswering.from_pretrained("adeem6/distilbert-qa")
@@ -36,10 +36,9 @@ if st.button("🔍 Get an answer"):
 
         input_ids = inputs["input_ids"][0].numpy()
         answer = tokenizer.decode(
-        input_ids[start_idx:end_idx+1],
-        skip_special_tokens=True,
-        clean_up_tokenization_spaces=True
-)
-
+            input_ids[start_idx:end_idx+1],
+            skip_special_tokens=True,
+            clean_up_tokenization_spaces=True
+        )
 
         st.success(f"🗣️ The answer: {answer}")
