@@ -23,7 +23,7 @@ Jinja2==3.1.6
 joblib==1.4.2
 jsonschema==4.23.0
 jsonschema-specifications==2025.4.1
-keras==3.9.2
+keras<3
 libclang==18.1.1
 Markdown==3.8
 markdown-it-py==3.0.0
@@ -74,4 +74,3 @@ wrapt==1.17.2
 zipp==3.21.0
 transformers==4.37.2
 tensorflow==2.15.0
-
