@@ -5,8 +5,8 @@ from transformers import TFDistilBertForQuestionAnswering, DistilBertTokenizerFa
 # Load model and tokenizer
 @st.cache_resource
 def load_model():
-    model = TFDistilBertForQuestionAnswering.from_pretrained("models/distilbert-qa")
-    tokenizer = DistilBertTokenizerFast.from_pretrained("models/distilbert-qa")
+    model = TFDistilBertForQuestionAnswering.from_pretrained("adeem6/distilbert-qa")
+    tokenizer = DistilBertTokenizerFast.from_pretrained("adeem6/distilbert-qa")
     return model, tokenizer
 
 model, tokenizer = load_model()
